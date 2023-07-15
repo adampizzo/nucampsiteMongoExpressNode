@@ -1,14 +1,28 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var campsiteRouter = require("./routes/campsiteRouter");
-var partnerRouter = require("./routes/partnerRouter");
-var promotionRouter = require("./routes/partnerRouter");
+const indexRouter = require("./routes/indexRouter");
+const userRouter = require("./routes/userRouter");
+const campsiteRouter = require("./routes/campsiteRouter");
+const partnerRouter = require("./routes/partnerRouter");
+const promotionRouter = require("./routes/partnerRouter");
+
+const url = "mongodb://0.0.0.0:27017/nucampsite";
+const connect = mongoose.connect(url, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+connect.then(
+    () => console.log("Connected correctly to server"),
+    (err) => console.log(err)
+);
 
 // import createHttpError from "http-errors";
 // import express from "express";
@@ -32,7 +46,7 @@ const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
-app.use(morgan("dev"));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
