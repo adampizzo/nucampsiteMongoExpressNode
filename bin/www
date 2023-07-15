@@ -4,14 +4,14 @@
  * Module dependencies.
  */
 
-// var app = require('../app');
-// var debug = require('debug')('nucampsiteserver:server');
-// var http = require('http');
+var app = require("../app");
+var debug = require("debug")("nucampsiteserver:server");
+var http = require("http");
 
-import app from "../app.js";
-import http from "http";
-import Debug from "debug";
-const debug = Debug("nucampsiteserver:server");
+// import app from "../app.js";
+// import http from "http";
+// import Debug from "debug";
+// const debug = Debug("nucampsiteserver:server");
 
 /**
  * Get port from environment and store in Express.

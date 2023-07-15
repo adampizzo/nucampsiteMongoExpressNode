@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 
 const partnerRouter = express.Router();
 
@@ -52,4 +52,4 @@ partnerRouter
         res.end(`Deleting partner: ${req.params.partnerId}`);
     });
 
-export default partnerRouter;
+module.exports = partnerRouter;

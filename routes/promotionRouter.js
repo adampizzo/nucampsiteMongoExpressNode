@@ -1,5 +1,4 @@
-import express from "express";
-
+const express = require("express");
 const promotionRouter = express.Router();
 
 promotionRouter
@@ -52,4 +51,4 @@ promotionRouter
         res.end(`Deleting promotion: ${req.params.promotionId}`);
     });
 
-export default promotionRouter;
+module.exports = promotionRouter;

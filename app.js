@@ -1,28 +1,31 @@
-// var createError = require("http-errors");
-// var express = require("express");
-// var path = require("path");
-// var cookieParser = require("cookie-parser");
-// var logger = require("morgan");
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
-// var indexRouter = require("./routes/index");
-// var usersRouter = require("./routes/users");
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var campsiteRouter = require("./routes/campsiteRouter");
+var partnerRouter = require("./routes/partnerRouter");
+var promotionRouter = require("./routes/partnerRouter");
 
-import createHttpError from "http-errors";
-import express from "express";
-import path from "path";
-import cookieParser from "cookie-parser";
-import morgan from "morgan";
+// import createHttpError from "http-errors";
+// import express from "express";
+// import path from "path";
+// import cookieParser from "cookie-parser";
+// import morgan from "morgan";
 
-import indexRouter from "./routes/indexRouter.js";
-import userRouter from "./routes/userRouter.js";
-import campsiteRouter from "./routes/campsiteRouter.js";
-import partnerRouter from "./routes/partnerRouter.js";
-import promotionRouter from "./routes/promotionRouter.js";
+// import indexRouter from "./routes/indexRouter.js";
+// import userRouter from "./routes/userRouter.js";
+// import campsiteRouter from "./routes/campsiteRouter.js";
+// import partnerRouter from "./routes/partnerRouter.js";
+// import promotionRouter from "./routes/promotionRouter.js";
 
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+// import { dirname } from "path";
+// import { fileURLToPath } from "url";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
@@ -57,4 +60,4 @@ app.use(function (err, req, res, next) {
     res.render("error");
 });
 
-export default app;
+module.exports = app;
