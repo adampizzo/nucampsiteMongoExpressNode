@@ -9,7 +9,7 @@ const indexRouter = require("./routes/indexRouter");
 const userRouter = require("./routes/userRouter");
 const campsiteRouter = require("./routes/campsiteRouter");
 const partnerRouter = require("./routes/partnerRouter");
-const promotionRouter = require("./routes/partnerRouter");
+const promotionRouter = require("./routes/promotionRouter");
 
 const url = "mongodb://0.0.0.0:27017/nucampsite";
 const connect = mongoose.connect(url, {
